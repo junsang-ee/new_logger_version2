@@ -1,4 +1,4 @@
-package com.logger.web.model;
+package com.logger.web.model.entity.common;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;

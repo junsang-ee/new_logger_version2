@@ -1,0 +1,2 @@
+DELETE http://localhost:8080/api/user/c20f4ddd-bf98-442f-b9b8-5e847078cc30
+Content-Type: application/json

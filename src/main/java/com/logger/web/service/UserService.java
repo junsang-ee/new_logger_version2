@@ -4,5 +4,10 @@ import com.logger.web.model.dto.request.UserSaveRequest;
 import com.logger.web.model.entity.UserEntity;
 
 public interface UserService {
-    public UserEntity save(UserSaveRequest userSaveRequest);
+    UserEntity save(UserSaveRequest userSaveRequest);
+
+    String delete(String userId);
+
+    UserEntity get(String userId);
+
 }

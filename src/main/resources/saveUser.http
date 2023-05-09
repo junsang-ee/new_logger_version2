@@ -1,0 +1,11 @@
+POST http://localhost:8080/api/user
+Content-Type: application/json
+
+{
+"name":"hwangjunsang",
+"email":"testEmail",
+"password":"testPassword",
+"mobile":"010-4305-3451",
+"role":"OWNER",
+"type": "ADMIN"
+}

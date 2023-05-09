@@ -4,11 +4,10 @@ import com.logger.web.model.dto.request.UserSaveRequest;
 import com.logger.web.model.entity.UserEntity;
 import com.logger.web.service.UserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.*;
 
+@Slf4j
 @RequiredArgsConstructor
 @RequestMapping("/api/user")
 @RestController
@@ -19,6 +18,11 @@ public class UserController {
     @PostMapping
     public UserEntity save(@RequestBody UserSaveRequest userSaveRequest) {
         return userService.save(userSaveRequest);
+    }
+
+    @DeleteMapping("/{userId}")
+    public String delete(@PathVariable String userId) {
+        return userService.delete(userId);
     }
 
 }
