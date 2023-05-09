@@ -7,5 +7,5 @@
 /.gradle/
 
 .gradle
-
-
+build
+build/**
