@@ -8,6 +8,7 @@ import org.hibernate.annotations.DynamicInsert;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Getter
 @Setter
@@ -54,8 +55,12 @@ public class UserEntity extends CustomBaseIdEntity implements Serializable {
         PENDING, ENABLED, DISABLED
     }
 
+    @OneToMany(mappedBy = "createdBy")
+    private List<PostEntity> posts;
+
     @PrePersist
     private void onPrePersist() {
         this.status = Status.ENABLED;
     }
+
 }
