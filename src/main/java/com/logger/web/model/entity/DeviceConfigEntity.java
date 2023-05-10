@@ -11,7 +11,7 @@ import javax.persistence.ManyToOne;
 @Getter
 @NoArgsConstructor
 @Entity(name = "device_config")
-public class DeviceConfig extends CustomBaseIdEntity {
+public class DeviceConfigEntity extends CustomBaseIdEntity {
     private Type type;
 
     private Scope scope;
