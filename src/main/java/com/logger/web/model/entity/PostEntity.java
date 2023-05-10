@@ -26,7 +26,7 @@ public class PostEntity extends CreationLocalDateTimeEntity {
     @JoinColumn(name = "user")
     private UserEntity createdBy;
 
-    private enum Type {
+    public enum Type {
         NOTICE, QNA, FAQ, INSPECT, SALES
     }
 }

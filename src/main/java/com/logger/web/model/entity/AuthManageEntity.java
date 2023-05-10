@@ -7,27 +7,31 @@ import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
 @NoArgsConstructor
-@Entity(name = "user_consent")
-public class UserConsentEntity extends CustomBaseIdEntity {
+@Entity(name = "auth_manage")
+public class AuthManageEntity extends CustomBaseIdEntity {
+    private String token;
 
     private Type type;
 
-    @ManyToOne
+    private LocalDateTime expireAt;
+
+    private LocalDateTime loginAt;
+
+    private String userAgent;
+
+    private String updatePassword;
+
+    @OneToOne
     @JoinColumn(name = "user")
     private UserEntity user;
 
-    private Consent consent;
-
     public enum Type {
-        NIGHT, EVENT
-    }
-
-    public enum Consent {
-        CONSENT, DISSENT
+        BRROWSER, APP
     }
 }
