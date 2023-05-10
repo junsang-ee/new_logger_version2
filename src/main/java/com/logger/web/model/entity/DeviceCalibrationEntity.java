@@ -6,9 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Getter
@@ -19,6 +17,7 @@ public class DeviceCalibrationEntity extends CustomBaseIdEntity {
 
     private String description;
 
+    @Enumerated(EnumType.STRING)
     private Certification certification;
 
     private LocalDateTime calibratedAt;
