@@ -1,5 +1,6 @@
 package com.logger.web.model.entity;
 
+
 import com.logger.web.model.entity.common.CustomBaseIdEntity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,25 +11,26 @@ import javax.persistence.*;
 @Getter
 @Setter
 @NoArgsConstructor
-@Entity(name = "user_consent")
-public class UserConsentEntity extends CustomBaseIdEntity {
+@Entity(name = "device_model")
+public class DeviceModelEntity extends CustomBaseIdEntity {
+    private String name;
 
     @Enumerated(EnumType.STRING)
     private Type type;
 
     @Enumerated(EnumType.STRING)
-    private Consent consent;
+    private Feature feature;
 
-    @ManyToOne
-    @JoinColumn(name = "user")
-    private UserEntity user;
+    private String description;
 
+    private String attachGroupId;
+    public enum Feature {
+        NFC, BLE, PROBE, LTE, EPAPER, WIFI
+    }
 
     public enum Type {
-        NIGHT, EVENT
+        LOGGER, EPD, GATEWAY
     }
 
-    public enum Consent {
-        CONSENT, DISSENT
-    }
+
 }
